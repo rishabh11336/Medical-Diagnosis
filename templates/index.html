@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Infoware</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+    <style>
+        .field-container {
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function addFields() {
+            var container = document.getElementById("container");
+            
+            // Create a new field container
+            var fieldContainer = document.createElement("div");
+            fieldContainer.className = "field-container";
+            
+            // Create the container div
+            var containerDiv = document.createElement("div");
+            containerDiv.className = "container text-center";
+            
+            // Create the row div
+            var rowDiv = document.createElement("div");
+            rowDiv.className = "row";
+            
+            // Create the Symptoms column
+            var symptomsCol = document.createElement("div");
+            symptomsCol.className = "col";
+            
+            // Create the Symptoms field
+            var symptomsField = document.createElement("input");
+            symptomsField.type = "text";
+            symptomsField.className = "form-control";
+            symptomsField.name = "symptoms[]";
+            symptomsField.placeholder = "Symptoms";
+            symptomsField.required = true;
+            
+            // Create the Severity column
+            var severityCol = document.createElement("div");
+            severityCol.className = "col";
+            
+            // Create the Severity field
+            var severityField = document.createElement("select");
+            severityField.className = "form-select";
+            severityField.name = "severity[]";
+            
+            // Create the High option
+            var highOption = document.createElement("option");
+            highOption.value = "High";
+            highOption.textContent = "High";
+            
+            // Create the Medium option
+            var mediumOption = document.createElement("option");
+            mediumOption.value = "Medium";
+            mediumOption.textContent = "Medium";
+            
+            // Create the Low option
+            var lowOption = document.createElement("option");
+            lowOption.value = "Low";
+            lowOption.textContent = "Low";
+            
+            // Append the options to the Severity field
+            severityField.appendChild(highOption);
+            severityField.appendChild(mediumOption);
+            severityField.appendChild(lowOption);
+            
+            // Append the Symptoms field to the Symptoms column
+            symptomsCol.appendChild(symptomsField);
+            
+            // Append the Severity field to the Severity column
+            severityCol.appendChild(severityField);
+            
+            // Append the Symptoms column and Severity column to the row div
+            rowDiv.appendChild(symptomsCol);
+            rowDiv.appendChild(severityCol);
+            
+            // Append the row div to the container div
+            containerDiv.appendChild(rowDiv);
+            
+            // Append the container div to the field container
+            fieldContainer.appendChild(containerDiv);
+            
+            // Append the field container to the main container
+            container.appendChild(fieldContainer);
+        }
+    </script>
+</head>
+  <body style="background-color: rgb(163, 177, 138);">
+    <!--Navbar code-->
+    <nav class="navbar navbar-expand-lg" data-bs-theme="dark" style="background-color: rgba(247, 127, 0)">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Infoware</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/about">about</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <!--Navbar code ends here-->
+    <!--form starts here-->
+    <div class="container-fluid my-4">
+        <center><h1>Add Symptoms and Severity</h1></center>
+        <form action="/result" method="POST">
+            <div id="container">
+                <!-- Initial fields -->
+                <div class="field-container">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" name="symptoms[]" placeholder="Symptoms" required>
+                            </div>
+                            <div class="col">
+                                <select name="severity[]" class="form-select">
+                                    <option value="High">High</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Low">Low</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-around">
+              <button class="btn btn-success " type="button" onclick="addFields()">Add More Fields</button>
+              <input class="btn btn-danger" type="submit" value="check ur luck">
+            </div>
+        </form>
+    </div>
+    <!--form ends here-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>
