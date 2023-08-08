@@ -15,6 +15,10 @@ Medical Diagnosis Flask App is a simple web application that uses the OpenAI API
 
 - **Severity Assessment:** Provides an estimate of the severity of the condition, helping users decide whether they should seek medical attention urgently.
 
+Demo
+
+You can find a live demo of the Medical Diagnosis Flask App at [https://infoware-intern.azurewebsites.net](https://infoware-intern.azurewebsites.net/)
+
 ## Installation
 
 1. Clone this repository to your local machine:
