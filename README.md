@@ -1,7 +1,7 @@
 # Medical Diagnosis Flask App
 
-![GitHub](https://img.shields.io/github/license/rishabh11336/medical-diagnosis-app)
-![GitHub repo size](https://img.shields.io/github/repo-size/rishabh11336/medical-diagnosis-app)
+![GitHub](https://img.shields.io/github/license/rishabh11336/Medical-Diagnosis)
+![GitHub repo size](https://img.shields.io/github/repo-size/rishabh11336/Medical-Diagnosis)
 
 Medical Diagnosis Flask App is a simple web application that uses the OpenAI API to provide potential medical diagnoses based on the symptoms provided by the user. It offers a quick assessment of the severity of the condition, helping users decide whether a hospital visit might be necessary.
 
